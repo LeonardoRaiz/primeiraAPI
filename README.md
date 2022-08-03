@@ -16,7 +16,7 @@ npm i -g corepack
 ```
 ## Criação do package.json
 
-Entrar na pasta de criação e digitar o codigo:
+Entrar na pasta de criação e digitar o código:
 
 ```bash
 yarn init -y
@@ -26,8 +26,10 @@ Neste novo arquivo gerado `package.json` poderemos colocar os controles, as refe
 
 ## Inserindo o Express no projeto
 
-É necessario instalar a dependencia express no projeto:
+É necessário instalar a dependência express no projeto:
 
 ```bash
 yarn add express
 ```
+
+> Nota: Caso for persistir no GIT crie um arquivo `.gitignore`
