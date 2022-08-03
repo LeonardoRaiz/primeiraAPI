@@ -1,0 +1,7 @@
+{
+  "name": "PrimeiraAPI",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "LeonardoRaiz <leonardoraiz@icloud.com>",
+  "license": "MIT"
+}
