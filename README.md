@@ -49,5 +49,31 @@ Com as dependências criadas, vamos criar o arquivo principal da nossa API `inde
 Dentro do arquivos vamos aos códigos: 
 
 ```JavaScript
+//chamar a biblioteca express
 const express = require('express');
+
+//armazenar na váriavel server a biblioteca express()
+const server = express();
+
+//chamar a função listen para "escutar a porta em que vamos utilizar"
+server.listen(3500);
 ```
+
+É hora de tentar acessar a primeira rota! Precisa-se criar uma pequena rota de exemplo:
+
+```JavaScript
+//Criando a ROTA get para testar a API
+server.get('/teste', () => {
+  console.log('Deu certooooo!!!!')
+})
+```
+
+O teste é chamado por:
+
+```bash
+node index.js
+```
+
+E acessando:
+
+[localhost:3500/teste](http://localhost:3500/teste)
