@@ -32,4 +32,12 @@ Neste novo arquivo gerado `package.json` poderemos colocar os controles, as refe
 yarn add express
 ```
 
-> Nota: Caso for persistir no GIT crie um arquivo `.gitignore`
+> Nota: Caso for persistir no GIT crie um arquivo `.gitignore` para não fazer upload de todos os modulos.
+
+Logo após será adicionado o seguinte código no `package.json`
+
+```json
+"dependencies": {
+    "express": "^4.18.1"
+  }
+```
