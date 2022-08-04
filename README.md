@@ -77,3 +77,24 @@ node index.js
 E acessando:
 
 [localhost:3500/teste](http://localhost:3500/teste)
+
+Mas testar em CMD é feio né!? Vamos testar em HTML? 
+
+```JavaScript
+// Vamos criar dois parâmetros REQ -> representa os dados da aplicação e RES 
+// -> representa os dados que vai para o frontend
+server.get('/teste', (req, res) => {
+  return res.send('Hello World');
+})
+
+```
+
+Podemos testar em JSON também! 
+
+```JavaScript
+// Teste com JSON
+server.get('/teste', (req, res) => {
+  return res.json({teste: 'Deu certo!'});
+})
+
+```
