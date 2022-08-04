@@ -41,3 +41,13 @@ Logo após será adicionado o seguinte código no `package.json`
     "express": "^4.18.1"
   }
 ```
+
+## Crindo o arquivo index.js
+
+Com as dependências criadas, vamos criar o arquivo principal da nossa API `index.js`
+
+Dentro do arquivos vamos aos códigos: 
+
+```JavaScript
+const express = require('express');
+```
