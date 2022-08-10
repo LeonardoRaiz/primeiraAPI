@@ -98,3 +98,34 @@ server.get('/teste', (req, res) => {
 })
 
 ```
+
+# ROUTE PARAMS QUERY PARAMS
+
+Entendendo o sistema de Query e Route com parametros.
+
+Os query params são os valores que passamos na frente da rota, exemplo
+= ?escola = FATEC
+
+Os route params são os valores que passamos na rota, exemplo
+= /escola/1
+
+E por fim temos o Request body no qual são os valores que estão no corpo da requisição, exemplo:
+= {escola: ‘FATEC’, tipo: ‘Backend’}
+
+## Testando o query params
+```JavaScript
+// Testando o query params
+server.get('/teste', (req, res) => {
+  const escola = req.query.escola;
+  return res.json({teste: `Estamos estudando na ${ escola }`});
+})
+```
+
+## Testando o route params
+```JavaScript
+// Testando o route params
+server.get('/teste/:id', (req, res) => {
+  const id = req.params.id;
+  return res.json({teste: `Id da escola: ${ id }`});
+})
+```
