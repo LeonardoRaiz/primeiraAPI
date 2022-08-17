@@ -7,10 +7,12 @@ const server = express();
 //chamar a função listen para "escutar a porta em que vamos utilizar"
 server.listen(3500);
 
-//Criando a ROTA get para testar a API
-// Vamos criar dois parâmetros REQ -> representa os dados da aplicação e RES 
-// -> representa os dados que vai para o frontend
-server.get('/teste/:id', (req, res) => {
-  const id = req.params.id;
-  return res.json({teste: `Id da escola: ${ id }`});
+const nomes = ['Clark', 'Lois', 'Bruce', 'Harley', 'Jason', 'Hal'];
+
+// Aquisição do array e amostragem de cada nome dado seu index
+server.get('/teste/:index', (req, res) => {
+  const { index } = req.params;
+
+  return res.json(nomes[index]);
 })
+

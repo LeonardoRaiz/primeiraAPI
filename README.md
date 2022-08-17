@@ -129,3 +129,15 @@ server.get('/teste/:id', (req, res) => {
   return res.json({teste: `Id da escola: ${ id }`});
 })
 ```
+
+## Criando um Array e chama-lo pelo index
+
+Vamos criar uma vetor e testar no APP do Insomnia
+
+```JavaScript
+// criando o vetor
+const nomes = ['Clark', 'Lois', 'Bruce', 'Harley', 'Jason', 'Hal'];
+```
+
+Vamos atualizar novamente nosso código para a amostragem dos nossos componentes em json.
+
