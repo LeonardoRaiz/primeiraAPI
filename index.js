@@ -13,6 +13,14 @@ const nomes = ['Clark', 'Lois', 'Bruce', 'Harley', 'Jason', 'Hal'];
 server.get('/teste/:index', (req, res) => {
   const { index } = req.params;
 
-  return res.json(nomes[index]);
+  return res.send( `<!DOCTYPE html>
+  <html>
+    <body style="text-align: center">
+  
+      <h1 >Desafio!</h1>
+      <h1> Bem vindo <b style="color:red">${nomes[index]}</b></h1> 
+      <p>Você acabou de fazer uma interação Backend com Frontend. Parabéns! </p>
+    </body>
+  </html> `);
 })
 
