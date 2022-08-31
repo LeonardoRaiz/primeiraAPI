@@ -4,13 +4,14 @@ const express = require('express');
 //armazenar na váriavel server a biblioteca express()
 const server = express();
 
-//chamar a função listen para "escutar a porta em que vamos utilizar"
-server.listen(3500);
+//Existe uma necessidade de usar o express json para funcionar
+server.use(express.json())
 
 const nomes = ['Clark', 'Lois', 'Bruce', 'Harley', 'Jason', 'Hal'];
 
+//#region Desafio 
 // Aquisição do array e amostragem de cada nome dado seu index
-server.get('/teste/:index', (req, res) => {
+server.get('/desafio/:index', (req, res) => {
   const { index } = req.params;
 
   return res.send( `<!DOCTYPE html>
@@ -24,5 +25,50 @@ server.get('/teste/:index', (req, res) => {
   </html> `);
 })
 
+//#endregion
+
+//Criando um CRUD Create, Read, Update e Delete
+
+//Retornar todos os nomes
+server.get("/nomes", (req, res) => {
+
+  return res.json(nomes)
+
+});
+
+//Retornar um único nome
+server.get("/nomes/:index", (req, res) => {
+  const { index } = req.params;
+  return res.json(nomes[index]);
+});
+
+//Criar um novo nome
+server.post("/nomes",(req, res) => {
+  const { name } = req.body ;
+  nomes.push(name);
+
+  return res.json(nomes)
+});
+
+//Alterando um nome
+server.put("/nomes/:index", (req, res) => {
+  const { index } = req.params;
+  const { name } = req.body;
+
+  nomes[index] = name;
+
+  return res.json(nomes);
+});
+
+//Excluido algum nome
+server.delete("/nomes/:index", (req, res) => {
+  const { index } = req.params;
+
+  nomes.splice(index, 1);
+  return res.json(nomes);
+});
 
 
+
+//chamar a função listen para "escutar a porta em que vamos utilizar"
+server.listen(3000);
