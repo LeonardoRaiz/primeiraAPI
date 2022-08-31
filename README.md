@@ -141,3 +141,30 @@ const nomes = ['Clark', 'Lois', 'Bruce', 'Harley', 'Jason', 'Hal'];
 
 Vamos atualizar novamente nosso código para a amostragem dos nossos componentes em json.
 
+# Live Reload
+
+Biblioteca de auto realod para o backend.
+
+```bash
+yarn nodemon -D
+```
+o -D é somente para a parte de desenvolvimento
+
+Para rodar o servidor sem problemas, é necessário chamar o index.js no terminal e para isso usamos:
+
+```bash
+nodemon index.js
+```
+
+Porém, é muito chato toda hora escrever esse código. E por isso vamos criar um script dentro do nosso pacote de dependências.
+
+```json
+"scripts": {
+    "dev": "nodemon index.js"
+  },
+```
+Feito isso! Basta colocarmos o código no terminal:
+
+```bash
+yarn dev
+```
