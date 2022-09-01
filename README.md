@@ -169,3 +169,47 @@ Feito isso! Basta colocarmos o código no terminal:
 yarn dev
 ```
 
+# CRUD
+
+//Criando um CRUD Create, Read, Update e Delete
+
+//Retornar todos os nomes
+server.get("/nomes", (req, res) => {
+
+  return res.json(nomes)
+
+});
+
+//Retornar um único nome
+server.get("/nomes/:index", (req, res) => {
+  const { index } = req.params;
+  return res.json(nomes[index]);
+});
+
+//Criar um novo nome
+server.post("/nomes",(req, res) => {
+  const { name } = req.body ;
+  nomes.push(name);
+
+  return res.json(nomes)
+});
+
+//Alterando um nome
+server.put("/nomes/:index", (req, res) => {
+  const { index } = req.params;
+  const { name } = req.body;
+
+  nomes[index] = name;
+
+  return res.json(nomes);
+});
+
+//Excluido algum nome
+server.delete("/nomes/:index", (req, res) => {
+  const { index } = req.params;
+
+  nomes.splice(index, 1);
+  return res.json(nomes);
+});
+
+
